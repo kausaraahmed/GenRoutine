@@ -27,7 +27,6 @@ def dummy():
         course_day = request.form.get("course_day")
         course_time = request.form.get("course_time")
 
-
         return Routine.generator(
             table=table,
             checker_list=checker_list,
@@ -50,10 +49,10 @@ def clear():
         table[4] = [" ", " ", " ", " ", " ", " ", " "]
         checker_list.clear()
         return jsonify(table)
-    
+
     return render_template("index.html")
 
 
 # main driver function
-if __name__ == "__main__":
-    app.run(debug=True)
+# if __name__ == "__main__":
+#     app.run(debug=True)
