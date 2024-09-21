@@ -38,9 +38,7 @@ class Routine:
                         table[day2][idx] = name
                         checker_list.extend([in1, in2])
                     else:
-                        print(
-                            f"Conflict detected at time {time} on day {day} for {name}."
-                        )
+                        conflict = True
 
         elif ctype == "lab":
             day_to_index = {"sun": 0, "mon": 1, "tue": 2, "wed": 3, "thu": 4}
