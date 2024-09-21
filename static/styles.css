@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 95%;
+    height: 95%;
+    margin: 0 auto;
+    font-family: 'Ubuntu', sans-serif;
+    padding: 10px;
+    background-color: #f4f4f4;
+}
+
+.title-area {
+    height: 12vh;
+    margin: 20px 0;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    padding-bottom: 5px;
+}
+
+.content {
+    display: flex;
+}
+
+.course-input {
+    height: 77vh;
+    width: 25vw;
+    background-color: transparent;
+    padding: 12px;
+    border: 2px solid #141619;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.input-title {
+    display: flex;
+    height: 10%;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-area {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+}
+
+.input-area label {
+    padding: 7px 10px;
+}
+
+.course-code {
+    margin: 10px 0;
+    padding: 13px;
+    font-size: 1rem;
+    border: 2px solid black;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s ease-in-out;
+}
+
+.course-code:hover {
+    border: 2px solid grey;
+    background-color: transparent;
+}
+
+.course-code::placeholder {
+    color: #141619;
+}
+
+.course-code::placeholder:hover {
+    color: white;
+}
+
+.course-type {
+    display: flex;
+    justify-content: center;
+}
+
+.theory-btn {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    margin: 0 10px;
+    padding: 15px 20px;
+    background-color: #141619;
+    color: white;
+    font-size: 1.2rem;
+    border: 2px solid #141619;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.theory-btn:hover {
+    background-color: #141619;
+    color: white;
+}
+
+.lab-btn {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    margin: 0 10px;
+    padding: 15px 20px;
+    background-color: transparent;
+    font-size: 1.2rem;
+    border: 2px solid grey;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.lab-btn:hover {
+    background-color: #141619;
+    color: white;
+}
+
+.course-day {
+    height: 50px;
+    justify-content: center;
+    margin: 5px;
+}
+
+.theory-day {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.lab-day {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    line-height: 5px;
+}
+
+.course-time {
+    height: 230px;
+    flex-direction: column;
+    align-items: start;
+    margin-bottom: 7px;
+}
+
+.theory-time {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.lab-time {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.add-btn {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 15px 20px;
+    background-color: black;
+    color: white;
+    font-size: 1.2rem;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.add-btn:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+}
+
+.routine-table {
+    width: 80%;
+    height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 30px auto;
+    padding: 20px;
+    font-size: 14px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+table {
+    border: 3px solid black;
+    border-radius: 10px;
+    /* remote to round */
+    border-collapse: collapse;
+    width: 100%;
+    height: 100%;
+}
+
+th,
+td {
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 8px;
+    text-align: center;
+    font-size: 16px;
+}
+
+th {
+    background-color:
+        #f2f2f2;
+}
+
+.clearing-btn {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    padding: 15px 20px;
+    background-color: black;
+    color: white;
+    font-size: 1.2rem;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.clearing-btn:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+}
