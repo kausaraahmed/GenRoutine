@@ -15,11 +15,11 @@ document.getElementById('theory-btn').addEventListener('click', function () {
     l_day.style.display = 'none';
     t_time.style.display = 'flex';
     l_time.style.display = 'none';
-    theoryBtn.style.backgroundColor = '#141619'
-    theoryBtn.style.color = 'white'
-    labBtn.style.border = '2px solid lightgray'
-    labBtn.style.backgroundColor = 'transparent'
-    labBtn.style.color = '#141619'
+    theoryBtn.style.backgroundColor = '#141619';
+    theoryBtn.style.color = 'white';
+    labBtn.style.border = '2px solid lightgray';
+    labBtn.style.backgroundColor = 'transparent';
+    labBtn.style.color = 'gray';
 })
 
 document.getElementById('lab-btn').addEventListener('click', function () {
@@ -42,7 +42,7 @@ document.getElementById('lab-btn').addEventListener('click', function () {
     labBtn.style.color = 'white'
     theoryBtn.style.border = '2px solid lightgray'
     theoryBtn.style.backgroundColor = 'transparent'
-    theoryBtn.style.color = '#141619'
+    theoryBtn.style.color = 'gray'
 })
 
 document.getElementById('add-btn').addEventListener('click', function () {
@@ -88,8 +88,34 @@ document.getElementById('add-btn').addEventListener('click', function () {
         }).catch(error => console.error('Error:', error));
 });
 
-document.getElementById('clear-all-btn').addEventListener('click', function () {
+document.getElementById('clear-btn').addEventListener('click', function () {
     fetch('/clear', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: ``
+    })
+        .then(response => response.json())
+        .then(data => {
+            const table = data.table;
+            const conflict = data.conflict;
+
+            if (conflict) {
+                alert("No courses added");
+            }
+            else {
+                for (let i = 0; i < table.length; i++) {
+                    for (let j = 0; j < 7; j++) {
+                        document.getElementById(`cell-${i}-${j}`).innerHTML = `<pre>${table[i][j]}</pre>`;
+                    }
+                }
+            }
+        })
+        .catch(error => console.error('Error:', error));
+});
+document.getElementById('clear-all-btn').addEventListener('click', function () {
+    fetch('/clear-all', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'

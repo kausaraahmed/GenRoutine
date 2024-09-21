@@ -42,6 +42,26 @@ def dummy():
 @app.route("/clear", methods=["POST", "GET"])
 def clear():
     if request.method == "POST":
+        try:
+            in1 = checker_list.pop()
+            in2 = checker_list.pop()
+
+            for inx in (in1, in2):
+                i1 = int(inx / 10)
+                i2 = inx % 10
+                table[i1][i2] = " "
+            conflict = False
+        except:
+            conflict = True
+
+        return jsonify({"table": table, "conflict": conflict})
+
+    return render_template("index.html")
+
+
+@app.route("/clear-all", methods=["POST", "GET"])
+def clear_all():
+    if request.method == "POST":
         table[0] = [" ", " ", " ", " ", " ", " ", " "]
         table[1] = [" ", " ", " ", " ", " ", " ", " "]
         table[2] = [" ", " ", " ", " ", " ", " ", " "]

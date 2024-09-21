@@ -80,7 +80,7 @@ h1 {
 }
 
 .course-code::placeholder {
-    color: #141619;
+    color: darkgrey;
 }
 
 .course-code::placeholder:hover {
@@ -119,8 +119,9 @@ h1 {
     margin: 0 10px;
     padding: 15px 20px;
     background-color: transparent;
+    color: darkgray;
     font-size: 1.2rem;
-    border: 2px solid grey;
+    border: 2px solid lightgray;
     border-radius: 10px;
     cursor: pointer;
     transition: 0.3s ease-in-out;
@@ -250,4 +251,11 @@ th {
     background-color: white;
     color: black;
     border: 2px solid black;
+}
+
+.tools {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: space-evenly;
 }
