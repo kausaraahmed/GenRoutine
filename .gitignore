@@ -6,6 +6,10 @@ __pycache__/
 # C extensions
 *.so
 
+#custom add
+.idea/
+.tempCodeRunnerFile.py
+
 # Distribution / packaging
 .Python
 build/
