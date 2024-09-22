@@ -3,6 +3,7 @@ from routine import Routine
 
 app = Flask(__name__)
 
+# empty table
 table = [
     [" ", " ", " ", " ", " ", " ", " "],
     [" ", " ", " ", " ", " ", " ", " "],
@@ -11,7 +12,7 @@ table = [
     [" ", " ", " ", " ", " ", " ", " "],
 ]
 
-checker_list = []
+checker_list = []  # list for inserted indexes
 
 
 @app.route("/")
@@ -19,8 +20,8 @@ def home():
     return render_template("index.html")
 
 
-@app.route("/dummy", methods=["POST", "GET"])
-def dummy():
+@app.route("/routine", methods=["POST", "GET"])
+def routine():
     if request.method == "POST":
         course_code = request.form.get("course_code")
         course_type = request.form.get("course_type")
@@ -73,6 +74,5 @@ def clear_all():
     return render_template("index.html")
 
 
-# main driver function
-# if __name__ == "__main__":
-#     app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)

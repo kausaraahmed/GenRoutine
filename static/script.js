@@ -1,5 +1,6 @@
-let selectedCourseType = ' ';
+let selectedCourseType = ' ';   // for default selection while page loads 
 
+// theory button actions
 document.getElementById('theory-btn').addEventListener('click', function () {
     const t_day = document.getElementById('t-day');
     const l_day = document.getElementById('l-day');
@@ -8,7 +9,6 @@ document.getElementById('theory-btn').addEventListener('click', function () {
     const labBtn = document.getElementById('lab-btn');
     const theoryBtn = document.getElementById('theory-btn');
 
-    // Set the selected course ctype to 'theory'
     selectedCourseType = 'theory';
 
     t_day.style.display = 'flex';
@@ -22,6 +22,8 @@ document.getElementById('theory-btn').addEventListener('click', function () {
     labBtn.style.color = 'gray';
 })
 
+
+// theory button actions
 document.getElementById('lab-btn').addEventListener('click', function () {
     const t_day = document.getElementById('t-day');
     const l_day = document.getElementById('l-day');
@@ -30,7 +32,6 @@ document.getElementById('lab-btn').addEventListener('click', function () {
     const labBtn = document.getElementById('lab-btn');
     const theoryBtn = document.getElementById('theory-btn');
 
-    // Set the selected course ctype to 'lab'
     selectedCourseType = 'lab';
 
     console.log('lab');
@@ -45,11 +46,12 @@ document.getElementById('lab-btn').addEventListener('click', function () {
     theoryBtn.style.color = 'gray'
 })
 
+
+// course add button actions
 document.getElementById('add-btn').addEventListener('click', function () {
     const course_code = document.getElementById('course-code').value;
     let course_type = ' ';
 
-    // Use the selected course ctype
     if (selectedCourseType == ' ') {
         course_type = 'theory';
     } else {
@@ -64,7 +66,7 @@ document.getElementById('add-btn').addEventListener('click', function () {
     console.log(`Course Day: ${course_day}`);
     console.log(`Course Time: ${course_time}`);
 
-    fetch('/dummy', {
+    fetch('/routine', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
@@ -88,6 +90,8 @@ document.getElementById('add-btn').addEventListener('click', function () {
         }).catch(error => console.error('Error:', error));
 });
 
+
+// clear button to remove courses on by one
 document.getElementById('clear-btn').addEventListener('click', function () {
     fetch('/clear', {
         method: 'POST',
@@ -114,6 +118,9 @@ document.getElementById('clear-btn').addEventListener('click', function () {
         })
         .catch(error => console.error('Error:', error));
 });
+
+
+// clear all button to remove courses at once
 document.getElementById('clear-all-btn').addEventListener('click', function () {
     fetch('/clear-all', {
         method: 'POST',
