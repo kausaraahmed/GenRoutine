@@ -67,8 +67,8 @@ class Routine:
                 else:
                     conflict = True
 
+        # return jsonify(table)
         if conflict:
             return jsonify({"table": table, "conflict": True})
         else:
             return jsonify({"table": table, "conflict": False})
-        # return jsonify(table)

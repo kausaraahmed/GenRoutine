@@ -5,8 +5,8 @@
 }
 
 body {
-    width: 95%;
     height: 95%;
+    width: 95%;
     margin: 0 auto;
     font-family: 'Ubuntu', sans-serif;
     padding: 10px;
@@ -14,8 +14,8 @@ body {
 }
 
 .title-area {
-    height: 12vh;
-    margin: 20px 0;
+    height: fit-content;
+    margin: 2vw 0;
     text-align: center;
 }
 
@@ -26,11 +26,16 @@ h1 {
 
 .content {
     display: flex;
+    align-items: stretch;
 }
 
 .course-input {
-    height: 77vh;
-    width: 25vw;
+    display: flex;
+    flex-basis: 25%;
+    height: fit-content;
+    min-height: 37vw;
+    flex-direction: column;
+    justify-content: space-evenly;
     background-color: transparent;
     padding: 12px;
     border: 2px solid #141619;
@@ -43,11 +48,12 @@ h1 {
     height: 10%;
     width: 100%;
     margin: 0 auto;
-    font-size: 1.5rem;
+    padding: 0.5vw 0;
+    font-size: 1.8vw;
     background-color: black;
     color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 0.5vw;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -55,8 +61,10 @@ h1 {
 
 .input-area {
     display: flex;
+    height: max-content;
     flex-direction: column;
     margin-top: 5px;
+    justify-content: space-evenly;
 }
 
 .input-area label {
@@ -64,11 +72,12 @@ h1 {
 }
 
 .course-code {
-    margin: 10px 0;
-    padding: 13px;
-    font-size: 1rem;
+    display: flex;
+    margin: 0.8vw 0;
+    padding: 0.4vw;
+    font-size: 1.1vw;
     border: 2px solid black;
-    border-radius: 10px;
+    border-radius: 0.5vw;
     align-items: center;
     justify-content: center;
     transition: 0.2s ease-in-out;
@@ -90,19 +99,21 @@ h1 {
 .course-type {
     display: flex;
     justify-content: center;
+    margin: 0.8vw 0;
 }
 
 .theory-btn {
     display: flex;
     justify-content: center;
     width: 40%;
+    height: fit-content;
     margin: 0 10px;
-    padding: 15px 20px;
+    padding: 0.4vw 20px;
     background-color: #141619;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.5vw;
     border: 2px solid #141619;
-    border-radius: 10px;
+    border-radius: 0.5vw;
     cursor: pointer;
     transition: 0.3s ease-in-out;
 }
@@ -116,13 +127,14 @@ h1 {
     display: flex;
     justify-content: center;
     width: 40%;
+    height: fit-content;
     margin: 0 10px;
-    padding: 15px 20px;
+    padding: 0.4vw 20px;
     background-color: transparent;
     color: darkgray;
-    font-size: 1.2rem;
+    font-size: 1.5vw;
     border: 2px solid lightgray;
-    border-radius: 10px;
+    border-radius: 0.5vw;
     cursor: pointer;
     transition: 0.3s ease-in-out;
 }
@@ -132,15 +144,20 @@ h1 {
     color: white;
 }
 
+.details-selection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
 .course-day {
-    height: 50px;
+    display: flex;
     justify-content: center;
-    margin: 5px;
+    margin: 0.4vw;
 }
 
 .theory-day {
     display: flex;
-    padding: 10px;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -151,7 +168,6 @@ h1 {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    line-height: 5px;
 }
 
 .theory-day input[type="radio"] {
@@ -163,10 +179,10 @@ h1 {
 }
 
 .course-time {
-    height: 230px;
+    display: flex;
     flex-direction: column;
     align-items: start;
-    margin-bottom: 7px;
+    margin-bottom: 0.4vw 0;
 }
 
 .theory-time {
@@ -174,7 +190,6 @@ h1 {
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-evenly;
-    height: 100%;
 }
 
 .lab-time {
@@ -182,17 +197,16 @@ h1 {
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-evenly;
-    height: 100%;
 }
 
 .add-btn {
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    padding: 15px 20px;
+    padding: 0.5vw 20px;
     background-color: black;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.5vw;
     border: 2px solid transparent;
     border-radius: 10px;
     cursor: pointer;
@@ -206,49 +220,53 @@ h1 {
 }
 
 .routine-table {
-    width: 80%;
-    height: 77vh;
     display: flex;
-    align-items: center;
+    flex-basis: 65%;
+    flex-direction: column;
+    margin: 0 1vw;
+    padding: 1vw;
     justify-content: center;
-    margin: 0 30px auto;
-    padding: 20px;
-    font-size: 14px;
-    border: 2px solid black;
     border-radius: 10px;
 }
 
 table {
-    border: 3px solid black;
-    border-radius: 10px;
-    /* remote to round */
-    border-collapse: collapse;
+    flex-wrap: wrap;
+    height: 33vw;
     width: 100%;
-    height: 100%;
+    table-layout: fixed;
+    background: #141614;
+    border-radius: 7px;
+    border: 2px solid black;
 }
 
 th,
 td {
-    border: 2px solid black;
-    border-radius: 5px;
-    padding: 8px;
+    word-wrap: break-word;
+    white-space: normal;
+    padding: 0.2vw;
+    border-radius: 4px;
     text-align: center;
-    font-size: 16px;
+    font-size: 1vw;
+    background-color: #f2f2f2;
 }
 
-th {
-    background-color:
-        #f2f2f2;
+
+.tools {
+    display: flex;
+    flex-basis: 10%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: end;
 }
 
 .clearing-btn {
     display: flex;
+    width: 70%;
     justify-content: center;
-    margin: 10px;
-    padding: 15px 20px;
+    padding: 0.8vw 20px;
     background-color: black;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.3vw;
     border: 2px solid transparent;
     border-radius: 10px;
     cursor: pointer;
@@ -259,11 +277,4 @@ th {
     background-color: white;
     color: black;
     border: 2px solid black;
-}
-
-.tools {
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    justify-content: space-evenly;
 }
