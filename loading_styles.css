@@ -1,92 +1,118 @@
-.loader-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 7vw;
+body {
+    font-family: 'Ubuntu';
+    margin: 0 auto;
 }
 
-#second {
-    display: none;
+.main-container {
+    display: flex;
+    margin-top: 2vw;
+    height: 90vh;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+.loader-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.dots::after {
+    content: '';
+    display: inline-block;
+    width: fit-content;
+    text-align: left;
+    animation: dots 4s steps(5, end) infinite;
+}
+
+@keyframes dots {
+    0% {
+        content: '';
+    }
+
+    20% {
+        content: '. ';
+    }
+
+    40% {
+        content: '. . ';
+    }
+
+    60% {
+        content: '. . . ';
+    }
+
+    80% {
+        content: '. . . . ';
+    }
+
+    100% {
+        content: '. . . . . ';
+    }
+}
+
+.sub-container {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 p {
-    font-size: 20px;
+    font-size: 1.5vw;
+    line-height: 3vw;
+}
+
+iframe {
+    width: 50%;
+    height: 30vw;
+    border: 0.2vw solid #191919;
+    border-radius: 1vw;
+}
+
+.on-phone {
+    display: none;
 }
 
 img {
-    width: 55vw;
-    margin-bottom: 4vw;
-    border: 3px solid #141619;
+    width: 90%;
+    border: 0.2vw solid #141619;
+    border-radius: 1vw;
+    margin-top: 4vw;
 }
 
-.progress-bar {
-    width: 80%;
-    max-width: 400px;
-    height: 20px;
-    background-color: #e0e0e0;
-    border-radius: 10px;
-    overflow: hidden;
+figcaption {
+    padding-top: 0.5vw;
+    padding-bottom: 4vw;
+    font-size: 1.5vw;
 }
 
-.progress {
-    width: 0;
-    height: 100%;
-    background-color: #141619;
-    animation: fill 30s infinite;
-}
-
-@keyframes fill {
-    0% {
-        width: 10;
-    }
-
-    100% {
+@media screen and (max-width: 767px) {
+    .sub-container {
+        flex-direction: column;
         width: 100%;
     }
-}
 
-.fading-bars {
-    display: flex;
-    justify-content: space-between;
-    width: 240px;
-}
-
-.bar {
-    width: 30px;
-    height: 120px;
-    background-color: #141619;
-    animation: fade 2s infinite;
-}
-
-.bar:nth-child(1) {
-    animation-delay: 0s;
-}
-
-.bar:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.bar:nth-child(3) {
-    animation-delay: 0.4s;
-}
-
-.bar:nth-child(4) {
-    animation-delay: 0.6s;
-}
-
-.bar:nth-child(5) {
-    animation-delay: 0.8s;
-}
-
-@keyframes fade {
-
-    0%,
-    100% {
-        opacity: 0;
+    p {
+        font-size: 3vw;
+        line-height: 5vw;
     }
 
-    50% {
-        opacity: 1;
+    iframe {
+        width: 90%;
+        height: 90vw;
     }
+
+    .on-phone {
+        display: flex;
+    }
+
+    figcaption {
+        font-size: 2.5vw;
+    }
+
 }
