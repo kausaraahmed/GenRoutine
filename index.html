@@ -3,39 +3,193 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Loading..</title>
+    <title>Routine Generator</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="loading_styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
-        rel="stylesheet">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="main-container">
-        <div class="loader-container">
-            <div class="loading-text">
-                <h1>GenRoutine is waking up</h1>
-                <h1 class="dots"></h1>
-            </div>
-        </div>
-        <!-- Animation credit: https://blog.hubspot.com/website/css-loading-animation -->
 
-        <div class="sub-container">
-            <p>It was in deep sleep due the free tier hosting.<br> Sorry for the delay.<br> How about playing the
-                <b>Dino Game</b>!!!
-            </p>
-            <iframe src="https://thecodepost.org/apps/trex/index.html">
-                Your browser does not support iframes.
-            </iframe>
-            <p class="on-phone">Just tap the Dino....</p>
-        </div>
-        <img src="static/ss.png" alt="web app SS">
-        <figcaption>[GenRoutine Preview]</figcaption>
+    <!-- Title area -->
+    <div class="title-area">
+        <h1>Routinio</h1>
+        <p>generate routines effortlessly</p>
     </div>
-    <script src="loading_script.js"></script>
+
+    <!-- Content area -->
+    <div class="content">
+
+        <!-- Course input -->
+        <div class="course-input">
+
+            <!-- course input title -->
+            <div class="input-title">Courses</div>
+
+            <!-- input area -->
+            <div class="input-area">
+                <input type="text" id="course-code" class="course-code" placeholder="Enter Course code">
+
+                <!-- course ctype (theory / lab) -->
+                <div class="course-type">
+                    <button id="theory-btn" class="theory-btn" value="theory">Theory</button>
+                    <button id="lab-btn" class="lab-btn" value="lab">Lab</button>
+                </div>
+
+                <!-- course details selection -->
+                <div class="details-selection">
+
+                    <!-- course day start-->
+                    <div class="course-day">
+
+                        <!-- theory day -->
+                        <div id="t-day" class="theory-day">
+                            <label><input type="radio" id="day-sun-tue" name="day" value="sun">SUN - TUE</label>
+                            <label><input type="radio" id="day-mon-wed" name="day" value="mon">MON - WED</label>
+                        </div>
+
+                        <!-- lab day -->
+                        <div id="l-day" class="lab-day">
+                            <label><input type="radio" id="day-sun" name="day" value="sun">SUN</label>
+                            <label><input type="radio" id="day-mon" name="day" value="mon">MON</label>
+                            <label><input type="radio" id="day-tue" name="day" value="tue">TUE</label>
+                            <label><input type="radio" id="day-wed" name="day" value="wed">WED</label>
+                            <label><input type="radio" id="day-thu" name="day" value="thu">THU</label>
+                        </div>
+
+                    </div>
+                    <!-- course day end -->
+
+
+                    <!-- course time start -->
+                    <div class="course-time" id="course-time">
+
+                        <!-- theory time -->
+                        <div id="theory-time" class="theory-time">
+                            <label><input type="radio" id="time-8-00" name="time" value="8:00"> 8:00-9:20</label>
+                            <label><input type="radio" id="time-9-25" name="time" value="9:25"> 9:25-10:45</label>
+                            <label><input type="radio" id="time-10-50" name="time" value="10:50"> 10:50-12:10</label>
+                            <label><input type="radio" id="time-12-15" name="time" value="12:15"> 12:15-1:35</label>
+                            <label><input type="radio" id="time-1-40" name="time" value="1:40"> 1:40-3:00</label>
+                            <label><input type="radio" id="time-3-05" name="time" value="3:05"> 3:05-4:25</label>
+                            <label><input type="radio" id="time-4-30" name="time" value="4:30"> 4:30-5:50</label>
+                        </div>
+
+                        <!-- lab time -->
+                        <div id="lab-time" class="lab-time">
+                            <label><input type="radio" id="time-8-00" name="time" value="8:00"> 8:00-10:45</label>
+                            <label><input type="radio" id="time-9-25" name="time" value="9:25"> 9:25-12:10</label>
+                            <label><input type="radio" id="time-10-50" name="time" value="10:50"> 10:50-1:35</label>
+                            <label><input type="radio" id="time-12-15" name="time" value="12:15"> 12:15-3:00</label>
+                            <label><input type="radio" id="time-1-40" name="time" value="1:40"> 1:40-4:25</label>
+                            <label><input type="radio" id="time-3-05" name="time" value="3:05"> 3:05-5:50</label>
+                        </div>
+
+                    </div>
+                    <!-- course time end -->
+
+                </div>
+                <!-- course details selection end -->
+
+            </div>
+            <!-- input area end -->
+
+            <button class="add-btn" id="add-btn">ADD</button> <!-- add button -->
+
+        </div>
+        <!-- course input end -->
+
+
+        <!-- Routine table -->
+        <div class="routine-table" id="routine-table">
+            <table>
+                <tr>
+                    <th></th>
+                    <th>8:00 - 9:20</th>
+                    <th>9:25 - 10:45</th>
+                    <th>10:50 - 12:10</th>
+                    <th>12:15 - 1:35</th>
+                    <th>1:40 - 3:00</th>
+                    <th>3:05 - 4:25</th>
+                    <th>4:30 - 5:50</th>
+                </tr>
+                <tr>
+                    <th>Saturday</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Sunday</th>
+                    <td id="cell-0-0"></td>
+                    <td id="cell-0-1"></td>
+                    <td id="cell-0-2"></td>
+                    <td id="cell-0-3"></td>
+                    <td id="cell-0-4"></td>
+                    <td id="cell-0-5"></td>
+                    <td id="cell-0-6"></td>
+                </tr>
+                <tr>
+                    <th>Monday</th>
+                    <td id="cell-1-0"></td>
+                    <td id="cell-1-1"></td>
+                    <td id="cell-1-2"></td>
+                    <td id="cell-1-3"></td>
+                    <td id="cell-1-4"></td>
+                    <td id="cell-1-5"></td>
+                    <td id="cell-1-6"></td>
+                </tr>
+                <tr>
+                    <th>Tuesday</th>
+                    <td id="cell-2-0"></td>
+                    <td id="cell-2-1"></td>
+                    <td id="cell-2-2"></td>
+                    <td id="cell-2-3"></td>
+                    <td id="cell-2-4"></td>
+                    <td id="cell-2-5"></td>
+                    <td id="cell-2-6"></td>
+                </tr>
+                <tr>
+                    <th>Wednesday</th>
+                    <td id="cell-3-0"></td>
+                    <td id="cell-3-1"></td>
+                    <td id="cell-3-2"></td>
+                    <td id="cell-3-3"></td>
+                    <td id="cell-3-4"></td>
+                    <td id="cell-3-5"></td>
+                    <td id="cell-3-6"></td>
+                </tr>
+                <tr>
+                    <th>Thursday</th>
+                    <td id="cell-4-0"></td>
+                    <td id="cell-4-1"></td>
+                    <td id="cell-4-2"></td>
+                    <td id="cell-4-3"></td>
+                    <td id="cell-4-4"></td>
+                    <td id="cell-4-5"></td>
+                    <td id="cell-4-6"></td>
+                </tr>
+            </table>
+        </div>
+        <!-- routine table end -->
+
+        <!-- Tools -->
+        <div class="tools">
+            <button class="clearing-btn" id="clear-btn">Clear</button>
+            <button class="clearing-btn" id="clear-all-btn">Clear All</button>
+        </div>
+        <!-- Tools End-->
+
+    </div>
+    <!-- Content area end -->
+
+    <script src="script.js"></script>
+
 </body>
 
 </html>
