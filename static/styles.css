@@ -8,9 +8,8 @@ body {
     height: 95%;
     width: 95%;
     margin: 0 auto;
+    margin-top: 2% 0;
     font-family: 'Ubuntu', sans-serif;
-    padding: 10px;
-    background-color: #f4f4f4;
 }
 
 .title-area {
@@ -20,13 +19,17 @@ body {
 }
 
 h1 {
-    font-size: 3rem;
-    padding-bottom: 5px;
+    font-size: 3vw;
+    padding-bottom: 1vw;
+}
+
+p {
+    font-size: 1.2vw
 }
 
 .content {
     display: flex;
-    align-items: stretch;
+    /* align-items: stretch; */
 }
 
 .course-input {
@@ -36,11 +39,11 @@ h1 {
     min-height: 37vw;
     flex-direction: column;
     justify-content: space-evenly;
-    background-color: transparent;
-    padding: 12px;
-    border: 2px solid #141619;
-    border-radius: 10px;
+    padding: 1vw;
+    border: 0.3vw solid #141619;
+    border-radius: 1vw;
     margin: 0 auto;
+    margin-bottom: 1%;
 }
 
 .input-title {
@@ -53,7 +56,7 @@ h1 {
     background-color: black;
     color: white;
     border: none;
-    border-radius: 0.5vw;
+    border-radius: 0.8vw;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -63,28 +66,35 @@ h1 {
     display: flex;
     height: max-content;
     flex-direction: column;
-    margin-top: 5px;
     justify-content: space-evenly;
 }
 
 .input-area label {
-    padding: 7px 10px;
+    font-size: 1.5;
+    padding: 0.2vw;
+}
+
+input[type="radio"] {
+    height: 1.2vw;
+    width: 1.2vw;
+    margin: 0.5vw 0;
+
 }
 
 .course-code {
     display: flex;
     margin: 1vw 0;
-    padding: 0.4vw;
+    padding: 0.6vw;
     font-size: 1.1vw;
-    border: 2px solid black;
-    border-radius: 0.5vw;
+    border: 0.2vw solid black;
+    border-radius: 0.6vw;
     align-items: center;
     justify-content: center;
     transition: 0.2s ease-in-out;
 }
 
 .course-code:hover {
-    border: 2px solid grey;
+    border: 0.2vw solid gray;
     background-color: transparent;
 }
 
@@ -102,27 +112,7 @@ h1 {
     margin: 0.8vw 0;
 }
 
-.theory-btn {
-    display: flex;
-    justify-content: center;
-    width: 40%;
-    height: fit-content;
-    margin: 0 10px;
-    padding: 0.4vw 20px;
-    background-color: #141619;
-    color: white;
-    font-size: 1.5vw;
-    border: 2px solid #141619;
-    border-radius: 0.5vw;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-}
-
-.theory-btn:hover {
-    background-color: #141619;
-    color: white;
-}
-
+.theory-btn,
 .lab-btn {
     display: flex;
     justify-content: center;
@@ -130,18 +120,25 @@ h1 {
     height: fit-content;
     margin: 0 10px;
     padding: 0.4vw 20px;
-    background-color: transparent;
-    color: darkgray;
+    background-color: #141619;
+    color: white;
     font-size: 1.5vw;
-    border: 2px solid lightgray;
-    border-radius: 0.5vw;
+    border: 0.2vw solid #141619;
+    border-radius: 0.7vw;
     cursor: pointer;
     transition: 0.3s ease-in-out;
 }
 
+.theory-btn:hover,
 .lab-btn:hover {
     background-color: #141619;
     color: white;
+}
+
+#lab-btn {
+    color: lightgrey;
+    border: 0.2vw solid lightgray;
+    background-color: transparent;
 }
 
 .details-selection {
@@ -154,35 +151,36 @@ h1 {
     display: flex;
     justify-content: center;
     margin: 0.4vw;
+    font-size: 1.2vw;
 }
 
 .theory-day {
     display: flex;
-    justify-content: center;
+    width: 100%;
+    justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
 }
 
 .lab-day {
     display: none;
-    justify-content: center;
+    width: 100%;
+    justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
 }
 
-.theory-day input[type="radio"] {
-    margin-right: 5px;
-}
-
+.theory-day input[type="radio"],
 .lab-day input[type="radio"] {
-    margin-right: 5px;
+    margin-right: 0.5vw;
 }
 
 .course-time {
     display: flex;
     flex-direction: column;
     align-items: start;
-    margin-bottom: 0.4vw 0;
+    margin-bottom: 0.5vw 0;
+    font-size: 1.2vw;
 }
 
 .theory-time {
@@ -199,6 +197,7 @@ h1 {
     justify-content: space-evenly;
 }
 
+
 .add-btn {
     display: flex;
     justify-content: center;
@@ -207,7 +206,7 @@ h1 {
     background-color: black;
     color: white;
     font-size: 1.5vw;
-    border: 2px solid transparent;
+    border: 0.2vw solid transparent;
     border-radius: 10px;
     cursor: pointer;
     transition: 0.3s ease-in-out;
@@ -216,7 +215,7 @@ h1 {
 .add-btn:hover {
     background-color: white;
     color: black;
-    border: 2px solid black;
+    border: 0.2vw solid black;
 }
 
 .routine-table {
@@ -226,7 +225,7 @@ h1 {
     margin: 0 1vw;
     padding: 1vw;
     justify-content: center;
-    border-radius: 10px;
+    /* border-radius: 1vw; */
 }
 
 table {
@@ -235,8 +234,8 @@ table {
     width: 100%;
     table-layout: fixed;
     background: #141614;
-    border-radius: 7px;
-    border: 2px solid black;
+    border: 0.1vw solid black;
+    border-radius: 0.3vw;
 }
 
 th,
@@ -244,10 +243,10 @@ td {
     word-wrap: break-word;
     white-space: normal;
     padding: 0.2vw;
-    border-radius: 4px;
+    border-radius: 0.3vw;
     text-align: center;
     font-size: 1vw;
-    background-color: #f2f2f2;
+    background-color: white;
 }
 
 
@@ -267,7 +266,7 @@ td {
     background-color: black;
     color: white;
     font-size: 1.3vw;
-    border: 2px solid transparent;
+    border: 0.2vw solid transparent;
     border-radius: 10px;
     cursor: pointer;
     transition: 0.3s ease-in-out;
@@ -276,5 +275,99 @@ td {
 .clearing-btn:hover {
     background-color: white;
     color: black;
-    border: 2px solid black;
+    border: 0.2vw solid black;
+}
+
+@media screen and (max-width: 767px) {
+    body {
+        margin-top: 6%;
+    }
+
+    h1 {
+        font-size: 5vw;
+    }
+
+    p {
+        font-size: 2vw
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .input-title {
+        font-size: 2vw;
+        padding: 1.5vw 0;
+    }
+
+    .input-area {
+        margin-top: 2vw;
+    }
+
+    .course-code {
+        padding: 1vw;
+        font-size: 1.8vw;
+        border-radius: 1vw;
+        border: 0.3vw solid black;
+    }
+
+    .course-code:hover {
+        border: 0.3vw solid gray;
+    }
+
+    .course-type {
+        display: flex;
+        justify-content: center;
+        margin: 0.8vw 0;
+    }
+
+    .theory-btn,
+    .lab-btn {
+        border: 0.1vw solid #141619;
+    }
+
+    .course-day {
+        font-size: 1.8vw;
+    }
+
+    .course-time {
+        font-size: 1.8vw;
+        padding: 1vw;
+    }
+
+    .course-time label {
+        padding: 0.5vw;
+    }
+
+    .routine-table {
+        margin: 2vw 1vw;
+    }
+
+    table {
+        height: 50vw;
+        table-layout: auto;
+    }
+
+    th,
+    td {
+        font-size: 1.7vw;
+        font-weight: 500;
+    }
+
+
+    .tools {
+        display: flex;
+        margin: 0 auto;
+        margin-top: 2%;
+        width: 80%;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .clearing-btn {
+        display: flex;
+        width: 20%;
+    }
+
 }
